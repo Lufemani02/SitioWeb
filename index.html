@@ -8,8 +8,12 @@
     <link rel="stylesheet" href="css/style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 </head>
-<body class="">
+<body>
     <header>
+        <div class="flex-login">
+            <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Iniciar Sesion</button>
+            <button onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Registrarse</button>
+        </div>
         <nav class="nav nav-pills flex-column flex-sm-row">
             <img src="img/logo.jpg" alt="">
             <a class="flex-sm-fill text-sm-center nav-link active" aria-current="page" href="#">Inicio</a>
@@ -17,34 +21,102 @@
             <a class="flex-sm-fill text-sm-center nav-link" href="#" style="color: aliceblue;">Proyectos</a>
             <a class="flex-sm-fill text-sm-center nav-link" href="#" style="color: aliceblue;">Contactanos</a>
         </nav>
-        <main>
-            <section id="home" >
-                <h1>Administración</h1>
-                <h1>y ejecución</h1>
-                <h1> de obras</h1>
-                <h2>¡Déjanos ayudarte a mantener tu hogar en su mejor forma, siempre!.</h2>
-            </section>
-        </main>
-        <div class="estilos">
+        <!-- Login button and options-->
+        <div id="id01" class="modal">
+        <form class="modal-content animate" action="/action_page.php" method="post">
+            <div class="imgcontainer">
+            <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+            <img src="img/login.avif" alt="Avatar" class="avatar">
+            </div>
+
+            <div class="container">
+            <label for="uname"><b>Usuario</b></label>
+            <input type="text" placeholder="Correo electronico" name="uname" required>
+
+            <label for="psw"><b>Contraseña</b></label>
+            <input type="password" placeholder="Contraseña" name="psw" required>
+                
+            <button type="submit" class="btn btn-primary btn-lg btn-block">Iniciar Sesion</button>
+            <label>
+                <input type="checkbox" checked="checked" name="remember"> Recordar datos
+            </label>
+            </div>
+
+            <div class="container" style="background-color:#f1f1f1">
+            <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancelar</button>
+            <span class="psw">Recuperar <a href="#">contraseña ?</a></span>
+            </div>
+        </form>
+        </div>
+        <!-- Register form-->
+        <div id="id02" class="modal">
+            <form class="modal-content animate" action="/action_page.php" method="post">
+                <div class="imgcontainer">
+                <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+                <img src="img/login.avif" alt="Avatar" class="avatar">
+                </div>
+    
+                <div class="container">
+                <label for="uname"><b>Empresa</b></label>
+                <input type="text" placeholder="Nombre de tu empresa" name="uname" required>
+
+                <label for="uname"><b>Nit</b></label>
+                <input type="text" placeholder="Nit de tu empresa" name="uname" required>
+
+                <label for="uname"><b>Nombre</b></label>
+                <input type="text" placeholder="Nombre completo" name="uname" required>
+    
+                <label for="psw"><b>Telefono</b></label>
+                <input type="password" placeholder="Telefono" name="psw" required>
+                    
+                <label for="psw"><b>Correo electrónico</b></label>
+                <input type="password" placeholder="Contraseña" name="psw" required>
+
+                <button type="submit" class="btn btn-primary btn-lg btn-block">Crear cuenta</button>
+                </div>
+    
+                <div class="container" style="background-color:#f1f1f1">
+                <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancelar</button>
+                </div>
+            </form>
+            </div>
+
+        <script>
+        // Get the modal
+        var modal = document.getElementById('id01');
+        var modal = document.getElementById('id02');
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+        </script>
+
+        <section id="home" class="ajustar-texto">
+            <h1>Administración <br> y ejecución <br> de obras</h1>
+            <h2>¡Déjanos ayudarte a mantener tu hogar en su mejor forma, siempre!.</h2>
+        </section>
+        <div class="informacion-contacto">
             <a href="" style="text-decoration: none; color:white"><i class="fa-regular fa-address-book"></i> 3026099814 - 3228315619</a><br>
             <a href="" style="text-decoration: none; color:white"><i class="fa-regular fa-envelope"></i>   construcciones.samsar@gmail.com</a>
         </div>
     </header>
-    <aside class="flex-container">
-            <div class="contenedor2">
-                <p>
-                En Construcciones SamSar, entendemos la importancia de mantener tu hogar en perfectas condiciones. 
-                Ya sea que necesites reparaciones de plomería, trabajos eléctricos, renovación de fachadas o cualquier 
-                otro servicio de mantenimiento, nuestro equipo de expertos está aquí para ofrecerte soluciones rápidas, 
-                confiables y de alta calidad. Nos comprometemos a hacer tu vida más fácil y segura, cuidando tu hogar como si 
-                fuera el nuestro.
-                </p>
-            </div>
-            <div class="contenedor2">
-                <img src="img/aside.avif" alt="">
-            </div>
-      
-    </aside>
+    <main class="flex-container"> 
+        <div class="texto">
+            <p>
+            En Construcciones SamSar, entendemos la importancia de mantener tu hogar en perfectas condiciones. 
+            Ya sea que necesites reparaciones de plomería, trabajos eléctricos, renovación de fachadas o cualquier 
+            otro servicio de mantenimiento, nuestro equipo de expertos está aquí para ofrecerte soluciones rápidas, 
+            confiables y de alta calidad. Nos comprometemos a hacer tu vida más fácil y segura, cuidando tu hogar como si 
+            fuera el nuestro.
+            </p>
+        </div>
+        <div class="imagen">
+            <img src="img/aside.avif" alt="">
+        </div>   
+    </main>
     <section class="contenedor">
         <div class="col">
             <figure>
