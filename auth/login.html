@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Iniciar Sesión</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="/css/style.css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+  <script src="/shared/js/firebase-config.js"></script>
+  <script src="/auth/js/login.js"></script>
+  
+</head>
+<body style="background-color: #f4f6f9;">
+        <!-- Botón hamburguesa -->
+    <button id="menu-toggle">☰</button>
+    <!-- Menú lateral -->
+    <nav id="side-menu">
+        <a href="/index.html">Inicio</a>
+    </nav>
+    <div class="centrar">
+        <img src="/modules/cliente/img/logo3.jfif" alt="logo-empresa" class="logo">
+    </div>
+<!-- Login -->
+  <div class="modal-content" id="iniciar-sesion">
+    <h2 style="text-align: center; margin: 2rem;">INICIAR SESIÓN</h2>
+    <form>
+      <label for="login-email"><b>Correo</b></label>
+      <input id="login-email" type="email" placeholder="Ingrese Su correo" required/>
+      <label for="login-password"><b>Contraseña</b></label>
+      <input id="login-password" type="password" placeholder="Ingrese Su contraseña"required/>
+      <a href="/auth/registro.html"> ¿No tienes cuenta? Registrate</a>
+      <a href="/auth/reset.html">¿Olvidaste tu contraseña?</a>
+      <button type="button" onclick="login()" >Ingresar</button>
+    </form>
+  </div>
+  <script src="/shared/js/script.js"></script>
+</body>
+</html>

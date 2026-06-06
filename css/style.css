@@ -1,95 +1,86 @@
- /* Styles for Index */
- @media (max-width: 768px) {
-.flex-container {
-  flex-direction: column; /* Apila los elementos en móviles */
-  align-items: center; /* Centra el contenido */
-}
-.texto, .imagen{
-  width: 100%; /* Ocupan todo el ancho */
-  text-align: center; 
-}
-.modal-content, animate {
-    background-color: #fefefe;
-    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
-    border: 1px solid #888;
-    width: fit-content; /* Could be more or less, depending on screen size */
-  }
-}
  body{
-  font-family: 'Courier New', Courier, monospace;
-  width: fit-content;
-  /*background-color: rgb(201, 148, 110);*/
- }
-header {
-  width: fit-content;
-  padding: 4%;
-  background-image: url('../img/interior.avif');   
+  font-family: 'Poppins', sans-serif;
+  scroll-behavior: smooth;
+  height: 100%;
+  outline: none;
+  caret-color: transparent;
+}
+section {
+  padding: 90px 20px;
+  border-bottom: 1px solid #ccc;
+  scroll-margin-top: 10px; /* espacio para evitar solapamiento */
+}
+.main_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  background-image: url('/modules/cliente/img/interior.avif');   
   background-size: cover;             /* La imagen cubre toda la pantalla */
   background-position: top center;    /* Posición inicial de la imagen */
   background-attachment: fixed;       /* Hace que la imagen de fondo se quede fija al hacer scroll */
-  background-repeat: no-repeat;       /* Evita que la imagen se repita */
-  color: rgb(245, 247, 246);        /*Cambia el color del texto para que sea visible sobre la imagen */ 
-}
-nav { 
-  align-items: center;
+  background-repeat: no-repeat;       /* Evita que la imagen se repita */ 
   font-weight: bolder;
-  font-size: large;
-   /* Centra el contenido verticalmente */    
+  color: white;
 }
-nav img {
-  margin: 2%;
-  max-width: 10%; 
-  height: auto; /* Mantiene la proporción de la imagen */
-  object-fit: contain; /* Asegura que la imagen se ajusta bien */
-  border-radius: 100%;
-}
-nav a:hover{
-  background-color: #0D6EFD;
-}
-.ajustar-texto{
-  margin-top: 5%;
-  color: rgb(255, 255, 255);
-  display: flex; /* Habilita Flexbox */
-  flex-direction: column;
+.item{
+  margin: 1rem;
+  flex: 1;
   text-align: center;
-  }
-h1{
-  letter-spacing: 10px;
-  font-weight: bolder;
 }
-.informacion-contacto :hover{
-  background-color: #0D6EFD;
-  font-size: x-large;
+.centrar{
+  display: flex;
+  justify-content: center;
+}
+.logo {
+  width: 10%;
+  border-radius: 100%;
+  margin: 1rem;
+}
+/* Modal login */
+.modal-content {
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1px;
+  border-radius: 2rem;
+  background-color: #F5ECE6;
+  border: solid 1px #102A47;
+  margin: auto;
+  margin-bottom: 2rem;
+  width: 40%;
+  color: #102A47;
+}
+h1,h2,h3{
+  letter-spacing: 1px;
+  font-weight: 600;
 }
 .flex-container{
-  display: flex; /* Activa Flexbox */
-  justify-content: space-between;  
-  align-items: center; /* Alinea verticalmente */
-  width: fit-content; /* Ancho del contenedor */
-  margin: 2%; /* Centrar en la página */
-  padding: 2%;
-}
-.texto{
-  width: 50%;
+  display: flex;
+  justify-content: space-between;
   font-size: larger;
   text-align: justify;
+  align-items: center;
+  margin: 5rem;
 }
-.imagen{
-  width: 45%;
+.flex-item{
+  flex: 1;
+  margin: 10px;
 }
-.imagen img{
-  width: 100%; /* La imagen se adapta al contenedor */
-  height: auto; /* Mantiene la proporción */
+img {
+  max-width: 100%;
+  height: auto;
   display: block;
 }
 .contenedor{
-  margin: 5%;
   display: flex;
   flex-wrap: wrap;
+  margin: 5rem;
 }
 .col{
   flex: 1 1 20%; /* Hace que cada div ocupe el 20% del ancho */
-  margin: 10px;   /* Espacio entre las columnas */
+  margin: 5px;   /* Espacio entre las columnas */
   background-color: #f2f2f2;
   padding: 20px;
   box-sizing: border-box;
@@ -102,110 +93,193 @@ h1{
 .tamaño2{
   width: 60%;
 }
-/* Styles for Login */
-input[type=text], input[type=password] {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  box-sizing: border-box;
-}
-.flex-login{
-  display: flex;
-  justify-content: end;
-}
-/* Set a style for all buttons */
-button {
-  background-color: transparent;
-  color: white;
+
+/*Menu lareral*/
+#menu-toggle {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  z-index: 1001;
+  font-size: 24px;
+  background: #102A47;
+  opacity: 0.95 ;
+  color: #EE771A;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
   cursor: pointer;
-  margin-left: 5px;
+}
+#side-menu{
+  padding: 15px;
+  position: fixed;
+  top: 0;
+  left: -250px;
+  width: 250px;
+  height: 100%;
+  background: #102A47;
+  opacity: 0.95;
+  display: flex;
+  flex-direction: column;
+  padding-top: 60px;
+  transition: left 0.3s ease;
+  z-index: 1000;
+}
+#side-menu a {
+  color: #e4dbe0;
+  padding: 15px 20px;
+  text-decoration: none;
+  border-top: 1px solid #EE771A;
+}
+#side-menu a.active{
+  color: white; /* verde de WhatsApp, por ejemplo */
+  font-weight: bold;
+  background-color: #EE771A;
+}
+#side-menu a:hover {
+  background: #EE771A;
+  transition: 0.4s;
+}
+#side-menu.open {
+  left: 0;
+}
+
+/*Seccion contacto*/
+
+.centrar-contacto{
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+#contacto { 
+  background-color: #F5ECE6;
+  padding: 20px 10px;
+}
+.redes-sociales {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+.redes-sociales a img {
+  transition: transform 0.2s ease;
+}
+.redes-sociales a img:hover {
+  transform: scale(1.2);
+}
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 70%;
+}
+form input, form button {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 1rem;
   border: none;
 }
-button:hover {
-  background-color: #0D6EFD;
-  border-radius: 15%;
-}
-/* Extra styles for the cancel button */
-.cancelbtn {
-  width: auto;
-  padding: 10px 18px;
-  background-color: #f44336;
-}
-/* Center the image and position the close button */
-.imgcontainer {
-  text-align: center;
-  margin: 24px 0 12px 0;
-  
-}
-img.avatar {
-  width: 20%;
-}
-.container {
-  width: 80%;
-  padding: 16px;
-  color: #000;
-}
-span.psw {
-  float: right;
-  padding-top: 16px;
-}
-/* The Modal (background) */
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-  padding-top: 60px;
-}
-/* Modal Content/Box */
-.modal-content {
-  background-color: #fefefe;
-  margin: auto;
-  border: 1px solid #888;
-  width: 80%; /* Could be more or less, depending on screen size */
-}
-/* The Close Button (x) */
-.close {
-  position: absolute;
-  right: 25px;
-  top: 0;
-  color: #000;
-  font-size: 35px;
-  font-weight: bold;
-}
-.close:hover,
-.close:focus {
-  color: red;
+form button {
+  background-color: #EE771A;
+  color: #102A47;
+  border: none;
+  border-radius: 1rem;
   cursor: pointer;
+  transition: background 0.3s ease;
 }
-/* Add Zoom Animation */
-.animate {
-  -webkit-animation: animatezoom 0.6s;
-  animation: animatezoom 0.6s
+form button:hover {
+  background-color: #102A47;
+  color: #F5ECE6;
+
 }
-@-webkit-keyframes animatezoom {
-  from {-webkit-transform: scale(0)} 
-  to {-webkit-transform: scale(1)}
+
+/* Prueba de estilos tabla*/
+.table-bordered{
+  background-color: #F5ECE6;
+  margin: 3rem;
+  border:solid 1px #EE771A;
+  color: #102A47;
 }
-@keyframes animatezoom {
-  from {transform: scale(0)} 
-  to {transform: scale(1)}
+
+/*Prueba dashboard*/
+
+.container {
+  
+  padding: 20px;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  margin: 2rem 10rem 2rem 10rem;
+  transition: margin-left 0.3s ease;
+  min-height: 100vh;
 }
-/* Change styles for span and cancel button on extra small screens */
-@media screen and (max-width: 300px) {
-  span.psw {
-     display: block;
-     float: none;
-  }
-  .cancelbtn {
-     width: 100%;
-  }
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  margin: 20px 0;
+  color: #102A47;
+}
+
+.card-stat {
+  background: #F5ECE6;
+  padding: 20px;
+  border: 2px solid #ddd;
+}
+
+.card-stat h2 {
+  margin: 10px 0 0;
+}
+
+.card {
+  background: #F5ECE6;
+  padding: 20px;
+  border: 2px solid #ddd;
+  margin-bottom: 20px;
+}
+
+.orden {
+  border: 1px solid #ccc;
+  padding: 15px;
+  margin-top: 10px;
+}
+
+.badge {
+  padding: 3px 8px;
+  font-size: 12px;
+}
+
+.alta {
+  background: black;
+  color: white;
+}
+
+.barra {
+  width: 100%;
+  height: 8px;
+  background: #ddd;
+  margin-top: 5px;
+}
+
+.progreso {
+  height: 100%;
+  background: #b60a0a;
+}
+
+#main-content{
+  transition: margin-left 0.3s ease;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin: 2rem 10rem 2rem 10rem;
+}
+
+#main-content.shift{
+  margin-left: 250px;
+}
+figure{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }

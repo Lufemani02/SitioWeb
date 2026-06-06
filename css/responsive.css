@@ -1,0 +1,118 @@
+/* responsive.css */
+
+/* Estilos generales para todas las pantallas */
+
+/* -------------------------------
+   AJUSTES GLOBALES RESPONSIVE
+---------------------------------*/
+
+/* Teléfonos (hasta 480px) */
+@media (max-width: 480px) {
+  body {
+    font-size: 14px;
+  }
+
+  .container,
+  .container-fluid,
+  .contenido,
+  .flex-container {
+    flex-direction: column !important;
+    padding: 10px !important;
+    align-items: center;
+  }
+
+  .btn,
+  button {
+    width: 100% !important;
+    margin: 5px 0;
+  }
+
+  input,
+  select,
+  textarea {
+    width: 100% !important;
+    margin-bottom: 10px;
+  }
+
+  .flip-card {
+    width: 90% !important;
+    height: auto !important;
+  }
+
+  .flip-card-inner {
+    flex-direction: column;
+  }
+
+  table {
+    font-size: 12px;
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  nav, header, footer {
+    text-align: center;
+  }
+
+  .navbar-brand,
+  .nav-link {
+    font-size: 14px !important;
+  }
+
+  .texto-perfil h1 {
+    font-size: 20px;
+  }
+
+  .texto-perfil h3 {
+    font-size: 16px;
+  }
+}
+
+/* Tablets (481px - 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+  body {
+    font-size: 15px;
+  }
+
+  .flip-card {
+    width: 80%;
+  }
+
+  .contenido,
+  .flex-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .btn {
+    width: 80%;
+  }
+}
+
+/* Laptops (769px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  body {
+    font-size: 16px;
+  }
+
+  .flip-card {
+    width: 40%;
+  }
+
+  .btn {
+    width: auto;
+  }
+}
+
+/* Pantallas grandes (1025px en adelante) */
+@media (min-width: 1025px) {
+  .container {
+    max-width: 1200px;
+    margin: auto;
+  }
+
+  .flip-card {
+    width: 300px;
+    height: 300px;
+  }
+}

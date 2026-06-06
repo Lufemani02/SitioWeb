@@ -5,155 +5,109 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Construcciones SamSar</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="/css/style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <div class="flex-login">
-            <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Iniciar Sesion</button>
-            <button onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Registrarse</button>
-        </div>
-        <nav class="nav nav-pills flex-column flex-sm-row">
-            <img src="img/logo.jpg" alt="">
-            <a class="flex-sm-fill text-sm-center nav-link active" aria-current="page" href="#">Inicio</a>
-            <a class="flex-sm-fill text-sm-center nav-link" href="#" style="color: aliceblue;">Quienes Somos</a>
-            <a class="flex-sm-fill text-sm-center nav-link" href="#" style="color: aliceblue;">Proyectos</a>
-            <a class="flex-sm-fill text-sm-center nav-link" href="#" style="color: aliceblue;">Contactanos</a>
-        </nav>
-        <!-- Login button and options-->
-        <div id="id01" class="modal">
-        <form class="modal-content animate" action="/action_page.php" method="post">
-            <div class="imgcontainer">
-            <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-            <img src="img/login.avif" alt="Avatar" class="avatar">
-            </div>
+<section id="inicio" class="main_container">
+    <!-- Botón hamburguesa -->
+    <button id="menu-toggle">☰</button>
+    <!-- Menú lateral -->
+    <nav id="side-menu">
+        <a href="#inicio">Inicio</a>
+        <a href="#quienes_somos">Quiénes Somos</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#contacto">Contacto</a>
+        <a href="/auth/login.html">Iniciar Sesión</a>
+    </nav>
+    <div class="centrar">
+        <img src="/modules/cliente/img/logo3.jfif" alt="logo-empresa" class="logo">
+    </div>
+        
+    <div class="item">
+        <h1>CONSTRUCCIONES <br> SAMSAR </h1>
+    </div>
+    <div class="item">
+            <h2 >¡Déjanos ayudarte a mantener tu  <b>espacio</b> <br> en su mejor forma, siempre!.</h2>
+    </div>   
+    <div class="item">
+        <a href="" style="text-decoration: none;color: white;"><i class="fa-regular fa-address-book"></i> 3026099814 - 3228315619</a><br>
+        <a href="" style="text-decoration: none; color: white;"><i class="fa-regular fa-envelope"></i>   construcciones.samsar@gmail.com</a>
+    </div>
+</section>
+<section id="quienes_somos" class="flex-container"> 
+    <div class="flex-item">
+        <p>
+        En Construcciones SamSar, entendemos la importancia de mantener tu hogar en perfectas condiciones. 
+        Ya sea que necesites reparaciones de plomería, trabajos eléctricos, renovación de fachadas o cualquier 
+        otro servicio de mantenimiento, nuestro equipo de expertos está aquí para ofrecerte soluciones rápidas, 
+        confiables y de alta calidad. Nos comprometemos a hacer tu vida más fácil y segura, cuidando tu hogar como si 
+        fuera el nuestro.
+        </p>
+    </div>
+    <div class="flex-item">
+        <img src="/modules/cliente/img/aside.avif" alt="">
+    </div>   
+</section>
+<section id="servicios" class="contenedor">
+    <div class="col">
+        <figure>
+        <img src="/modules/cliente/img/plomeria.png" alt="Descripción de la imagen" class="tamaño2">
+        <figcaption>Plomeria</figcaption>
+        </figure>
+    </div>
+    <div class="col">
+        <figure>
+        <img src="/modules/cliente/img/electricidad.png" alt="Descripción de la imagen" class="tamaño2">
+        <figcaption>Electricidad</figcaption>
+        </figure>
+    </div>
+    <div class="col">
+        <figure>
+        <img src="/modules/cliente/img/taponamientos.png" class="tamaño2">
+        <figcaption>Taponamientos</figcaption>
+        </figure>
+    </div>
+    <div class="col">
+        <figure>
+        <img src="/modules/cliente/img/fachada.png" alt="Descripción de la imagen" class="tamaño2">
+        <figcaption>Fachadas</figcaption>
+        </figure>
+    </div>
+    <div class="col">
+        <figure>
+        <img src="/modules/cliente/img/planos.png" alt="Descripción de la imagen" style="width: 10%;">
+        <figcaption>Elaboración de planos arquitectónicos.</figcaption>
+        </figure>
+    </div>
+</section>
+<section id="contacto" class="centrar-contacto">
+<!-- Formulario -->
+ <div class="modal-content">
+    <h2>Contacto</h2>
 
-            <div class="container">
-            <label for="uname"><b>Usuario</b></label>
-            <input type="text" placeholder="Correo electronico" name="uname" required>
-
-            <label for="psw"><b>Contraseña</b></label>
-            <input type="password" placeholder="Contraseña" name="psw" required>
-                
-            <button type="submit" class="btn btn-primary btn-lg btn-block">Iniciar Sesion</button>
-            <label>
-                <input type="checkbox" checked="checked" name="remember"> Recordar datos
-            </label>
-            </div>
-
-            <div class="container" style="background-color:#f1f1f1">
-            <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancelar</button>
-            <span class="psw">Recuperar <a href="#">contraseña ?</a></span>
-            </div>
-        </form>
-        </div>
-        <!-- Register form-->
-        <div id="id02" class="modal">
-            <form class="modal-content animate" action="/action_page.php" method="post">
-                <div class="imgcontainer">
-                <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
-                <img src="img/login.avif" alt="Avatar" class="avatar">
-                </div>
-    
-                <div class="container">
-                <label for="uname"><b>Empresa</b></label>
-                <input type="text" placeholder="Nombre de tu empresa" name="uname" required>
-
-                <label for="uname"><b>Nit</b></label>
-                <input type="text" placeholder="Nit de tu empresa" name="uname" required>
-
-                <label for="uname"><b>Nombre</b></label>
-                <input type="text" placeholder="Nombre completo" name="uname" required>
-    
-                <label for="psw"><b>Telefono</b></label>
-                <input type="password" placeholder="Telefono" name="psw" required>
-                    
-                <label for="psw"><b>Correo electrónico</b></label>
-                <input type="password" placeholder="Contraseña" name="psw" required>
-
-                <button type="submit" class="btn btn-primary btn-lg btn-block">Crear cuenta</button>
-                </div>
-    
-                <div class="container" style="background-color:#f1f1f1">
-                <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancelar</button>
-                </div>
-            </form>
-            </div>
-
-        <script>
-        // Get the modal
-        var modal = document.getElementById('id01');
-        var modal = document.getElementById('id02');
-
-        // When the user clicks anywhere outside of the modal, close it
-        window.onclick = function(event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        }
-        </script>
-
-        <section id="home" class="ajustar-texto">
-            <h1>Administración <br> y ejecución <br> de obras</h1>
-            <h2>¡Déjanos ayudarte a mantener tu hogar en su mejor forma, siempre!.</h2>
-        </section>
-        <div class="informacion-contacto">
-            <a href="" style="text-decoration: none; color:white"><i class="fa-regular fa-address-book"></i> 3026099814 - 3228315619</a><br>
-            <a href="" style="text-decoration: none; color:white"><i class="fa-regular fa-envelope"></i>   construcciones.samsar@gmail.com</a>
-        </div>
-    </header>
-    <main class="flex-container"> 
-        <div class="texto">
-            <p>
-            En Construcciones SamSar, entendemos la importancia de mantener tu hogar en perfectas condiciones. 
-            Ya sea que necesites reparaciones de plomería, trabajos eléctricos, renovación de fachadas o cualquier 
-            otro servicio de mantenimiento, nuestro equipo de expertos está aquí para ofrecerte soluciones rápidas, 
-            confiables y de alta calidad. Nos comprometemos a hacer tu vida más fácil y segura, cuidando tu hogar como si 
-            fuera el nuestro.
-            </p>
-        </div>
-        <div class="imagen">
-            <img src="img/aside.avif" alt="">
-        </div>   
-    </main>
-    <section class="contenedor">
-        <div class="col">
-            <figure>
-            <img src="img/plomeria.png" alt="Descripción de la imagen" class="tamaño2">
-            <figcaption>Plomeria</figcaption>
-          </figure>
-        </div>
-        <div class="col">
-            <figure>
-            <img src="img/electricidad.png" alt="Descripción de la imagen" class="tamaño2">
-            <figcaption>Electricidad</figcaption>
-          </figure>
-        </div>
-        <div class="col">
-            <figure>
-            <img src="img/taponamientos.png" class="tamaño2">
-            <figcaption>Taponamientos</figcaption>
-          </figure>
-        </div>
-        <div class="col">
-            <figure>
-            <img src="img/fachada.png" alt="Descripción de la imagen" class="tamaño2">
-            <figcaption>Fachadas</figcaption>
-          </figure>
-        </div>
-        <div class="col">
-            <figure>
-            <img src="img/planos.png" alt="Descripción de la imagen" style="width: 10%;">
-            <figcaption>Elaboración de planos arquitectónicos.</figcaption>
-          </figure>
-        </div>
-    </section>
-    <footer style="text-align: center; margin-top: 5%;">
-        <p>&copy; 2025 Construcciones SamSar. Todos los derechos reservados.</p>
-    </footer>
-    
-
+<!-- Redes sociales -->
+    <div class="redes-sociales">
+    <a href="https://wa.me/573026099814" target="_blank" title="WhatsApp">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" width="40">
+    </a>
+    <a href="https://www.instagram.com/construcciones.samsar/" target="_blank" title="Instagram">
+        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" width="40">
+    </a>
+    </div>
+    <form id="form-contacto">
+    <input type="text" name="nombre" placeholder="Nombre completo" required>
+    <input type="tel" name="telefono" placeholder="Teléfono" required>
+    <input type="email" name="correo" placeholder="Correo electrónico" required>
+    <input type="text" name="direccion" placeholder="Dirección" required>
+    <button type="submit">Enviar por WhatsApp</button>
+    </form>
+ </div>
+</section>
+<footer style="text-align: center; margin-top: 5%;">
+    <p>&copy; 2026 Construcciones SamSar. Todos los derechos reservados.</p>
+</footer>
+<script src="/shared/js/script.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>

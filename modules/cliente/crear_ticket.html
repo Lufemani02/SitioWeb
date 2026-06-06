@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panel de usuario</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="/css/style.css" />
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+  <script src="/shared/js/firebase-config.js"></script>
+  <script src="/shared/js/auth.js"></script>
+  <script defer src="/modules/cliente/js/dashboard.js"></script>
+</head>
+<body style="background-color: #f4f6f9;">
+    <!-- Botón hamburguesa -->
+    <button id="menu-toggle">☰</button>
+    <nav id="side-menu">
+        <a href="/modules/cliente/crear_ticket.html" class="active">Crear Ticket</a>
+        <a href="/modules/cliente/consultar_ticket.html">Ordenes</a>
+        <a href="" onclick="logout()">Cerrar Sesión</a>
+        <p id="user-email">Cargando...</p>              
+    </nav>
+    <div class="centrar">
+        <img src="/modules/cliente/img/logo3.jfif" alt="logo-empresa" class="logo">
+    </div>
+  <div class="modal-content">
+    <h2 style="text-align: center;">CREAR SOLICITUD</h2>
+  <form id="ticket-form">
+      <input class="form-control" id="asunto" placeholder="Asunto" required /> 
+      <input class="form-control"  id="descripcion" placeholder="Descripción" required style="height: 5rem;">
+      <input type="text" id="direccion" placeholder="Dirección del servicio" required   >
+      <input type="tel" id="telefono" placeholder="Teléfono" required>
+      <!-- <input type="file" id="evidencia" placeholder="Evidencia" accept="image/*,application/pdf"> -->
+      <label for="prioridad">Prioridad:</label>
+      <select id="prioridad">
+        <option value="baja">Baja</option>
+        <option value="media" selected>
+          Media
+        </option>
+        <option value="alta">
+          Alta
+        </option>
+      </select>
+      <button type="submit" style="margin-top: 1rem;">Enviar solicitud</button>
+  </form>
+  <p id="mensaje-confirmacion"></p>
+  </div>
+  <script src="/shared/js/script.js"></script>
+</body>
+</html>
